@@ -6,14 +6,22 @@ import { addRequest } from '../../ducks/task';
 const mapDispatchToProps = { addRequest };
 
 class Field extends Component {
-  onSubmitHandler = evt => {
+  onSubmitButtonHandler = evt => {
     const ENTER_CODE = 13;
     const addRequest = this.props.addRequest;
     if (evt.keyCode === ENTER_CODE) {
       if (evt.target.value !== '') {
         const value = evt.target.value;
-        addRequest( value );
+        addRequest(value);
       }
+    }
+  };
+
+  onSubmitClickHandler = evt => {
+    const addRequest = this.props.addRequest;
+    if (evt.target.value !== '') {
+      const value = evt.target.value;
+      addRequest(value);
     }
   };
 
@@ -24,9 +32,9 @@ class Field extends Component {
           name="todo"
           type="text"
           placeholder="Что бы сделать?"
-          onKeyDown={this.onSubmitHandler}
+          onKeyDown={this.onSubmitButtonHandler}
         />
-        <StyledArrow />
+        <StyledArrow onClick={this.onSubmitClickHandler} />
       </FieldWrapper>
     );
   }

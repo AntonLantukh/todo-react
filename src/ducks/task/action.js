@@ -1,9 +1,8 @@
-import { createActions } from 'redux-actions';
+const ADD_REQUEST = `ADD_REQUEST`;
 
-export const {
-  task: { addRequest }
-} = createActions({
-  TASK: {
-    ADD_REQUEST: null
-  }
-});
+export const addRequest = task => {
+  return {
+    type: ADD_REQUEST,
+    payload: { task, done: false }
+  };
+};

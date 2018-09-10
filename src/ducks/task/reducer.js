@@ -1,14 +1,16 @@
-import { handleActions } from 'redux-actions';
-import { combineReducers } from 'redux';
-import { addRequest } from './action';
+const ADD_REQUEST = `ADD_REQUEST`;
+const initialState = {
+  records: []
+};
 
-const records = handleActions(
-  {
-    [addRequest]: (_state, action) => ({..._state.records, action.payload })
-  },
-  []
-);
-
-export default combineReducers({
-  records
-});
+export default function records(state = initialState, action) {
+  switch (action.type) {
+    case ADD_REQUEST:
+      return {
+        ...state,
+        records: [...state.records, action.payload]
+      };
+    default:
+      return state;
+  }
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Field from '../Field';
-import Task from '../Task'
-import {AppWrapper, AppContainer} from './Style'
+import TaskList from '../TaskList';
+import { AppWrapper, AppContainer } from './Style';
 
 export default class App extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class App extends Component {
       <AppWrapper>
         <AppContainer>
           <Field />
-          <Task />
+          <TaskList />
         </AppContainer>
       </AppWrapper>
     );
