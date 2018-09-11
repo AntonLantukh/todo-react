@@ -1,17 +1,22 @@
-const ADD_REQUEST = `ADD_REQUEST`;
-const CHANGE_VISIBILITY_FILTER = 'CHANGE_VISIBILITY_FILTER';
+import TYPES from './types';
 
 export const addRequest = task => {
   return {
-    type: ADD_REQUEST,
+    type: TYPES.ADD_REQUEST,
     payload: { task, done: false }
   };
 };
 
 export const changeFilter = value => {
   return {
-    type: CHANGE_VISIBILITY_FILTER,
+    type: TYPES.CHANGE_VISIBILITY_FILTER,
     payload: value
   };
 };
 
+export const completeTask = id => {
+  return {
+    type: TYPES.COMPLETE_TASK,
+    payload: id
+  };
+};

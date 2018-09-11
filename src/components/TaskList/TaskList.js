@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Task from '../Task';
 import { connect } from 'react-redux';
 import { getRecords } from '../../ducks/task';
-import {StyledTaskList} from './Style'
+import { StyledTaskList } from './Style';
 
 const mapStateToProps = state => ({
   records: getRecords(state)
-})
+});
 
 class TaskList extends Component {
   render() {
@@ -14,9 +14,7 @@ class TaskList extends Component {
     return (
       <StyledTaskList>
         {records.length
-          ? records.map((item, id) => (
-              <Task record={item.task} key={id} />
-            ))
+          ? records.map((item, id) => <Task record={item} key={id} />)
           : ''}
       </StyledTaskList>
     );
