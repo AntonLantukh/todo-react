@@ -1,5 +1,5 @@
-import { addRequest } from './action';
-import getRecords from './selector';
+import { addRequest, changeFilter } from './action';
+import {getRecords} from './selector';
 import tasks from './reducer';
 
-export { addRequest, tasks, getRecords };
+export { addRequest, changeFilter, tasks, getRecords };

@@ -5,7 +5,7 @@ import Tasks from './img/todo.png';
 export const FieldWrapper = styled.div`
   position: relative;
 
-  &:: before {
+  &::before {
     position: absolute;
     top: 55px;
     left: 18px;
@@ -23,7 +23,7 @@ export const StyledField = styled.input`
   width: 500px;
   height: 50px;
   box-sizing: border-box;
-  margin: 50px auto 20px auto;
+  margin: 50px auto 2px auto;
   padding: 0 100px 0 80px;
   font-size: 20px;
   border: none;

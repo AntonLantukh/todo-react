@@ -1,12 +1,15 @@
-import { createStore } from 'redux';
+import { createStore, compose } from 'redux';
 import rootReducer from './ducks';
 
-export default initialState => {
+const createAppStore = () => {
   const store = createStore(
     rootReducer,
-    initialState,
-    window.devToolsExtension ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
+    compose(
+      window.devToolsExtension ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
+    )
   );
 
   return store;
-};
+}
+
+export default createAppStore;

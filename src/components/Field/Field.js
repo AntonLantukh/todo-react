@@ -6,6 +6,11 @@ import { addRequest } from '../../ducks/task';
 const mapDispatchToProps = { addRequest };
 
 class Field extends Component {
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+  }
+
   onSubmitButtonHandler = evt => {
     const ENTER_CODE = 13;
     const addRequest = this.props.addRequest;
@@ -17,10 +22,10 @@ class Field extends Component {
     }
   };
 
-  onSubmitClickHandler = evt => {
+  onSubmitClickHandler = () => {
     const addRequest = this.props.addRequest;
-    if (evt.target.value !== '') {
-      const value = evt.target.value;
+    if (this.myRef.current.value !== '') {
+      const value = this.myRef.current.value;
       addRequest(value);
     }
   };
@@ -33,6 +38,7 @@ class Field extends Component {
           type="text"
           placeholder="Что бы сделать?"
           onKeyDown={this.onSubmitButtonHandler}
+          innerRef={this.myRef}
         />
         <StyledArrow onClick={this.onSubmitClickHandler} />
       </FieldWrapper>
