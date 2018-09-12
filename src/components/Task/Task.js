@@ -1,27 +1,17 @@
 import React, { Component } from 'react';
 import { StyledTask, TaskName, TaskCheckbox, TaskLabel } from './Style';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { completeTask } from '../../ducks/task';
 
-const mapDispatchToProps = { completeTask };
-
-class Task extends Component {
-  onChangeHandler = () => {
-    const { record, completeTask } = this.props;
-    completeTask(record.id);
-  };
-
+export default class Task extends Component {
   render() {
-    const { record } = this.props;
-    console.log(record);
+    const { record, onChangeHandler } = this.props;
     return (
       <StyledTask>
         <TaskCheckbox
           type="checkbox"
           name="done"
           id="done"
-          onChange={this.onChangeHandler}
+          onChange={(evt, record) => onChangeHandler(evt, record)}
           checked={record.done}
         />
         <TaskLabel htmlFor="done" />
@@ -34,8 +24,3 @@ class Task extends Component {
 Task.propTypes = {
   record: PropTypes.object.isRequired
 };
-
-export default connect(
-  false,
-  mapDispatchToProps
-)(Task);
