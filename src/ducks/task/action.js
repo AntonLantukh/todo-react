@@ -20,3 +20,17 @@ export const completeTask = id => {
     payload: id
   };
 };
+
+export const unDoTask = id => {
+  return {
+    type: TYPES.UNDO_TASK,
+    payload: id
+  };
+};
+
+export const deleteTask = id => {
+  return {
+    type: TYPES.DELETE_TASK,
+    payload: id
+  };
+};

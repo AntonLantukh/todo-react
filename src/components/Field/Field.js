@@ -39,6 +39,7 @@ class Field extends Component {
           placeholder="Что бы сделать?"
           onKeyDown={this.onSubmitButtonHandler}
           innerRef={this.myRef}
+          maxLength="20"
         />
         <StyledArrow onClick={this.onSubmitClickHandler} />
       </FieldWrapper>
