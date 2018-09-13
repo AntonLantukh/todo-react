@@ -16,6 +16,6 @@ script:
 
 deploy:
   provider: heroku
-  app: final-homework
+  app: todo-react-app-21
   api_key:
 secure: $HEROKU_KEY
