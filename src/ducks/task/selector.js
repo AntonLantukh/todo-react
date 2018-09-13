@@ -1,18 +1,25 @@
-export const getRecords = state => {
-  switch (state.tasks.visibility) {
-    case 'all':
-      return state.tasks.records;
-    case 'active':
-      let tasks = state.tasks.records.filter(item => {
-        return !item.done;
-      });
-      return tasks;
-    case 'complete':
-      tasks = state.tasks.records.filter(item => {
-        return item.done;
-      });
-      return tasks;
-    default:
-      return tasks;
+import { createSelector } from 'reselect'
+
+const getVisibility = (state) => state.tasks.visibility;
+const getRecords = (state) => state.tasks.records;
+
+export const getActualRecords = createSelector(
+  [getVisibility, getRecords], (visibility, records) => {
+    switch (visibility) {
+      case 'all':
+        return records;
+      case 'active':
+        let tasks = records.filter(item => {
+          return !item.done;
+        });
+        return tasks;
+      case 'complete':
+        tasks = records.filter(item => {
+          return item.done;
+        });
+        return tasks;
+      default:
+        return [];
+    }
   }
-};
+);

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Task from '../Task';
 import { connect } from 'react-redux';
-import { getRecords, completeTask, unDoTask, deleteTask } from '../../ducks/task';
+import { getActualRecords, completeTask, unDoTask, deleteTask } from '../../ducks/task';
 import { StyledTaskList } from './Style';
 
 const mapStateToProps = state => ({
-  records: getRecords(state)
+  records: getActualRecords(state)
 });
 
 const mapDispatchToProps = { completeTask, unDoTask, deleteTask };

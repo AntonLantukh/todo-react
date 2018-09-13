@@ -5,7 +5,7 @@ import UncheckedPicture from './img/round-off.png';
 export const StyledToggleBar = styled.div`
   width: 500px;
   height: 25px;
-  margin: 0 0 20px 0;
+  margin: 0;
   padding: 0 70px;
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);

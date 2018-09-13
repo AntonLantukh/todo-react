@@ -7,7 +7,7 @@ export const FieldWrapper = styled.div`
 
   &::before {
     position: absolute;
-    top: 55px;
+    top: 25px;
     left: 18px;
     width: 40px;
     height: 40px;
@@ -23,7 +23,7 @@ export const StyledField = styled.input`
   width: 500px;
   height: 50px;
   box-sizing: border-box;
-  margin: 50px auto 2px auto;
+  margin: 20px auto 2px auto;
   padding: 0 100px 0 80px;
   font-size: 20px;
   border: none;
@@ -35,7 +35,7 @@ export const StyledField = styled.input`
 
 export const StyledArrow = styled.div`
   position: absolute;
-  top: 55px;
+  top: 25px;
   right: 18px;
   width: 40px;
   height: 40px;

@@ -15,7 +15,7 @@ class Field extends Component {
     const ENTER_CODE = 13;
     const addRequest = this.props.addRequest;
     if (evt.keyCode === ENTER_CODE) {
-      if (evt.target.value !== '') {
+      if (evt.target.value.trim() !== '') {
         const value = evt.target.value;
         addRequest(value);
       }
@@ -24,7 +24,7 @@ class Field extends Component {
 
   onSubmitClickHandler = () => {
     const addRequest = this.props.addRequest;
-    if (this.myRef.current.value !== '') {
+    if (this.myRef.current.value.trim() !== '') {
       const value = this.myRef.current.value;
       addRequest(value);
     }
