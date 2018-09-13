@@ -16,6 +16,6 @@ script:
 
 deploy:
   provider: heroku
-  app: todo-react-app-21
+  app: todo-react-21
   api_key:
-secure: $HEROKU_KEY
+    secure: $HEROKU_KEY
